@@ -1,0 +1,81 @@
+#container-feed {
+  h2 {
+    font-size: 1.4em;
+    font-weight: bold;
+    margin-bottom: 15px;
+    color: #ffffff;
+  }
+}
+
+ion-list {
+  background: transparent;
+  ion-item {
+    --background: #fff;
+    --border-radius: 8px;
+    margin-bottom: 8px;
+    box-shadow: 0 1px 4px rgba(0, 0, 0, 0.08);
+  }
+}
+
+.challenge-posts-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(150px, 1fr));
+  gap: 15px;
+}
+
+.post-card {
+  --background: #fff;
+  --color: #333;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+  border-radius: 8px;
+  overflow: hidden;
+
+  ion-card-content {
+    padding: 12px;
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+  }
+
+  .post-content {
+    flex-grow: 1;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    min-height: 100px;
+    text-align: center;
+  }
+
+  .post-text {
+    font-size: 0.95em;
+    color: #444;
+    margin-bottom: 10px;
+    display: -webkit-box;
+    -webkit-line-clamp: 3;
+    line-clamp: 3;
+    -webkit-box-orient: vertical;
+    overflow: hidden;
+    text-overflow: ellipsis;
+  }
+
+  .post-footer {
+    display: flex;
+    align-items: center;
+    justify-content: flex-end;
+    margin-top: 10px;
+
+    .user-info {
+      display: flex;
+      align-items: center;
+      font-size: 0.85em;
+      color: #666;
+
+      ion-avatar {
+        width: 24px;
+        height: 24px;
+        margin-right: 5px;
+      }
+    }
+  }
+}

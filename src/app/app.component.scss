@@ -1,0 +1,26 @@
+ion-textarea {
+  --padding-start: 0;
+  --padding-end: 0;
+  --padding-top: 10px;
+  --padding-bottom: 10px;
+  font-size: 1.1em;
+  color: #333;
+}
+
+ion-chip {
+  --background: #f0f0f0;
+  --color: #555;
+  --border-radius: 20px;
+  margin-right: 8px;
+  cursor: pointer;
+
+  &.ion-color-primary {
+    --background: var(--ion-color-primary);
+    --color: #fff;
+  }
+}
+
+ion-button[fill="outline"] {
+  --border-color: var(--ion-color-primary);
+  --color: var(--ion-color-primary);
+}

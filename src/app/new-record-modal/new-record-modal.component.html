@@ -1,0 +1,46 @@
+<ion-header [translucent]="true">
+  <ion-toolbar>
+    <ion-buttons slot="start">
+      <ion-button (click)="closeModal()">
+        <ion-icon name="arrow-back-outline"></ion-icon>
+      </ion-button>
+    </ion-buttons>
+    <ion-title>Novo Registro</ion-title>
+    <ion-buttons slot="end">
+      <ion-button (click)="saveRecord()" [disabled]="!newRecordText">Salvar</ion-button>
+    </ion-buttons>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content [fullscreen]="true" class="ion-padding">
+  <ion-list lines="none">
+    <ion-item>
+      <ion-textarea
+        label="O que você está pensando/fazendo?"
+        labelPlacement="floating"
+        placeholder="Ex: Treino de 30 min concluído!"
+        [autoGrow]="true"
+        [(ngModel)]="newRecordText"
+      ></ion-textarea>
+    </ion-item>
+  </ion-list>
+
+  <ion-list-header>
+    <ion-label>Vincular a um Desafio</ion-label>
+  </ion-list-header>
+
+  <ion-chip-list>
+    <ion-chip (click)="selectChallenge('yoga')" [color]="selectedChallenge === 'yoga' ? 'primary' : ''">
+      <ion-label>30 Dias de Yoga</ion-label>
+    </ion-chip>
+    <ion-chip (click)="selectChallenge('leitura')" [color]="selectedChallenge === 'leitura' ? 'primary' : ''">
+      <ion-label>Desafio de Leitura</ion-label>
+    </ion-chip>
+    <ion-chip (click)="selectChallenge('meditacao')" [color]="selectedChallenge === 'meditacao' ? 'primary' : ''">
+      <ion-label>Meditação Diária</ion-label>
+    </ion-chip>
+  </ion-chip-list>
+
+  <ion-button expand="block" (click)="createNewChallenge()">Criar Novo Desafio</ion-button>
+
+  </ion-content>

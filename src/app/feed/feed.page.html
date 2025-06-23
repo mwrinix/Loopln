@@ -1,0 +1,60 @@
+<ion-header [translucent]="true">
+  <ion-toolbar>
+    <ion-buttons slot="start">
+      <ion-back-button defaultHref="/home"></ion-back-button>
+    </ion-buttons>
+    <ion-title>
+      <span *ngIf="challengeName">{{ challengeName }}</span>
+      <span *ngIf="!challengeName">Feed de Posts</span>
+    </ion-title>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content [fullscreen]="true">
+  <ion-header collapse="condense">
+    <ion-toolbar>
+      <ion-title size="large">
+        <span *ngIf="challengeName">{{ challengeName }}</span>
+        <span *ngIf="!challengeName">Feed de Posts</span>
+      </ion-title>
+    </ion-toolbar>
+  </ion-header>
+
+  <div class="posts-container">
+    <ion-card *ngFor="let post of feedPosts">
+      <ion-card-content>
+        <div class="post-header">
+          <ion-item lines="none">
+            <ion-avatar slot="start">
+              <img src="https://ionicframework.com/docs/img/demos/avatar.svg" alt="Descrição da imagem" />
+            </ion-avatar>
+            <ion-label>
+              <h3>{{ post.user }}</h3>
+              <p>{{ post.date | date:'short' }}</p>
+            </ion-label>
+          </ion-item>
+        </div>
+        <div class="post-body">
+          <p class="post-text">{{ post.text }}</p>
+        </div>
+        <div class="post-footer">
+          <ion-button fill="clear" color="medium" size="small">
+            <ion-icon name="heart-outline" slot="start"></ion-icon>
+            Curtir
+          </ion-button>
+          <ion-button fill="clear" color="medium" size="small">
+            <ion-icon name="chatbubble-outline" slot="start"></ion-icon>
+            Comentar
+          </ion-button>
+        </div>
+      </ion-card-content>
+    </ion-card>
+  </div>
+
+  <ion-fab slot="fixed" vertical="bottom" horizontal="end">
+    <ion-fab-button>
+      <ion-icon name="add"></ion-icon>
+    </ion-fab-button>
+  </ion-fab>
+
+</ion-content>
